@@ -1,4 +1,4 @@
-﻿using CashRegister.Domain;
+﻿using CashRegister.Web.Models.DTO;
 
 namespace CashRegister.Web.Models.Request
 {

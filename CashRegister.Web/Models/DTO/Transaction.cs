@@ -1,4 +1,6 @@
-﻿namespace CashRegister.Domain.Models
+﻿using CashRegister.Web.Models.DTO;
+
+namespace CashRegister.Web.Models.DTO
 {
     public class Transaction
     {

@@ -1,11 +1,9 @@
-﻿using CashRegister.Domain;
+﻿using CashRegister.Web.Models.DTO;
 
 namespace CashRegister.Web.Models.Request
 {
     public class MakePaymentRequest
     {
-        public Dictionary<Currencies, int> AmountsPaid { get; set; }
-
-        public decimal Cost { get; set; }
+        public Transaction Transaction { get; set; }
     }
 }

@@ -54,11 +54,20 @@ namespace CashRegister.Domain.Models
             if (CanAmountsCoverTransaction(transaction.Cost))
             {
                 var change = GetChange(transaction);
+                AddCash(transaction);
                 return MakeChange(change);
             }
             else
             {
                 throw new InvalidOperationException("Cash Register does not hold enough cash to cover the transaction");
+            }
+        }
+
+        private void AddCash(Transaction transaction)
+        {
+            foreach (var denomination in transaction.AmountsPaid.Where(denomination => denomination.Value > 0))
+            {
+                _amounts[denomination.Key] += denomination.Value;
             }
         }
 

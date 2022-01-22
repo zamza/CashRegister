@@ -1,4 +1,4 @@
-﻿namespace CashRegister.Domain
+﻿namespace CashRegister.Domain.Models
 {
     public enum Currencies
     {
