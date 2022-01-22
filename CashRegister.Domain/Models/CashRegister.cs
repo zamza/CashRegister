@@ -14,28 +14,44 @@ namespace CashRegister.Domain.Models
             _denominations = denominations;
         }
 
+        public decimal SumAmounts(Dictionary<Currencies, int> amounts)
+        {
+            return amounts.Sum(amount => amount.Value * _denominations[amount.Key]);
+        }
+
+        public bool CanAmountsCoverTransaction(Dictionary<Currencies, int> amountPayed)
+        {
+            return CanAmountsCoverTransaction(SumAmounts(amountPayed));
+        }
+
+        public bool CanAmountsCoverTransaction(decimal amountPayed)
+        {
+            return SumAmounts(_amounts) >= amountPayed;
+        }
+
+        public Dictionary<Currencies, int> TakePayment(Dictionary<Currencies, int> amountPayed)
+        {
+            return TakePayment(SumAmounts(amountPayed));
+        }
+
         public Dictionary<Currencies, int> TakePayment(decimal amountPayed)
         {
-            var transaction = _amounts.ToDictionary(entry => entry.Key, entry => entry.Value);
-            var amountReturned = new Dictionary<Currencies, int>();
-            foreach (KeyValuePair<Currencies, decimal> denomination in _denominations.OrderByDescending(key => key.Value))
+            if (CanAmountsCoverTransaction(amountPayed))
             {
-                var amountUsed = Convert.ToInt32(Math.Min(Math.Floor(amountPayed / denomination.Value), transaction[denomination.Key]));
-                amountReturned.Add(denomination.Key, amountUsed);
-                amountPayed -= amountUsed * denomination.Value;
-                transaction[denomination.Key] -= amountUsed;
-            }
-
-            if (amountPayed > 0)
-            {
-                throw new InvalidOperationException();
+                var amountReturned = new Dictionary<Currencies, int>();
+                foreach (KeyValuePair<Currencies, decimal> denomination in _denominations.OrderByDescending(key => key.Value))
+                {
+                    var amountUsed = Convert.ToInt32(Math.Min(Math.Floor(amountPayed / denomination.Value), _amounts[denomination.Key]));
+                    amountReturned.Add(denomination.Key, amountUsed);
+                    amountPayed -= amountUsed * denomination.Value;
+                    _amounts[denomination.Key] -= amountUsed;
+                }
+                return amountReturned;
             }
             else
             {
-                _amounts = transaction;
-                return amountReturned;
+                throw new InvalidOperationException("Cash Register does not hold enough cash to cover the transaction");
             }
-
         }
     }
 }

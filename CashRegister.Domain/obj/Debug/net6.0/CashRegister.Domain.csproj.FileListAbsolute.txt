@@ -1,0 +1,12 @@
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\bin\Debug\net6.0\CashRegister.Domain.deps.json
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\bin\Debug\net6.0\CashRegister.Domain.dll
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\bin\Debug\net6.0\ref\CashRegister.Domain.dll
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\bin\Debug\net6.0\CashRegister.Domain.pdb
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\obj\Debug\net6.0\CashRegister.Domain.csproj.AssemblyReference.cache
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\obj\Debug\net6.0\CashRegister.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\obj\Debug\net6.0\CashRegister.Domain.AssemblyInfoInputs.cache
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\obj\Debug\net6.0\CashRegister.Domain.AssemblyInfo.cs
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\obj\Debug\net6.0\CashRegister.Domain.csproj.CoreCompileInputs.cache
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\obj\Debug\net6.0\CashRegister.Domain.dll
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\obj\Debug\net6.0\ref\CashRegister.Domain.dll
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Domain\obj\Debug\net6.0\CashRegister.Domain.pdb
