@@ -25,3 +25,5 @@ C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\obj\Debug\net6.
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\obj\Debug\net6.0\ref\CashRegister.Web.dll
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\obj\Debug\net6.0\CashRegister.Web.pdb
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\obj\Debug\net6.0\CashRegister.Web.genruntimeconfig.cache
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\bin\Debug\net6.0\CashRegister.Domain.dll
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\bin\Debug\net6.0\CashRegister.Domain.pdb

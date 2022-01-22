@@ -79,6 +79,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "CashRegister.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CashRegister.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CashRegister.Domain.dll": {}
+        }
       }
     }
   },
@@ -286,10 +296,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "CashRegister.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CashRegister.Domain/CashRegister.Domain.csproj",
+      "msbuildProject": "../CashRegister.Domain/CashRegister.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CashRegister.Domain >= 1.0.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.14.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -320,7 +336,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Domain\\CashRegister.Domain.csproj": {
+              "projectPath": "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Domain\\CashRegister.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
