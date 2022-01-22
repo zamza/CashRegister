@@ -11,6 +11,7 @@
         TwoDollars,
         FiveDollars,
         TenDollars,
-        TwentyDollars
+        TwentyDollars,
+        GoldDoubloons
     }
 }

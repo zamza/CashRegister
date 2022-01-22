@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>b79d65cb-30bb-436d-bf43-9ba081c4a2aa</UserSecretsId>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CashRegister.Domain\CashRegister.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\DTO\" />
   </ItemGroup>
 
 </Project>

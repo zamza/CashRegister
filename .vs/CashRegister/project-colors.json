@@ -5,7 +5,37 @@
       "ProjectGuid": "9a352df8-c532-48d3-be26-164014aaad5c",
       "DisplayName": "CashRegister.Web",
       "ColorIndex": 0
+    },
+    "fa497149-e684-4593-af5e-bd32331a54a6": {
+      "ProjectGuid": "fa497149-e684-4593-af5e-bd32331a54a6",
+      "DisplayName": "CashRegister.Domain",
+      "ColorIndex": 1
+    },
+    "bc1088a9-d8ca-4155-bb4d-61aeb9cc6047": {
+      "ProjectGuid": "bc1088a9-d8ca-4155-bb4d-61aeb9cc6047",
+      "DisplayName": "CashRegister.Test",
+      "ColorIndex": 2
+    },
+    "b3c32c2c-58fa-4579-a46f-19a05c3e8992": {
+      "ProjectGuid": "b3c32c2c-58fa-4579-a46f-19a05c3e8992",
+      "DisplayName": "CashRegister.Data",
+      "ColorIndex": 3
+    },
+    "07d4106e-4f6e-4449-8637-80c19e1d547e": {
+      "ProjectGuid": "07d4106e-4f6e-4449-8637-80c19e1d547e",
+      "DisplayName": "CashRegister.Services",
+      "ColorIndex": 4
+    },
+    "3e7cd3c3-9faa-4b3a-b234-ef8d7f4a481a": {
+      "ProjectGuid": "3e7cd3c3-9faa-4b3a-b234-ef8d7f4a481a",
+      "DisplayName": "CashRegister.Console",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 6
 }
