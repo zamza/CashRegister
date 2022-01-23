@@ -10,3 +10,6 @@ C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Data\obj\Debug\net6
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Data\obj\Debug\net6.0\CashRegister.Data.dll
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Data\obj\Debug\net6.0\ref\CashRegister.Data.dll
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Data\obj\Debug\net6.0\CashRegister.Data.pdb
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Data\bin\Debug\net6.0\CashRegister.Domain.dll
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Data\bin\Debug\net6.0\CashRegister.Domain.pdb
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Data\obj\Debug\net6.0\CashRegister.Data.csproj.CopyComplete

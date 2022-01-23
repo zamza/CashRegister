@@ -3,42 +3,42 @@ using CashRegister.Web.Models.DTO;
 
 namespace CashRegister.Web.Converters.Outbound
 {
-    public class CurrenciesToCurrenciesConverter : ITypeConverter<Domain.Models.Currencies, Currencies>
+    public class CurrenciesToCurrenciesConverter : ITypeConverter<Domain.Model.Currencies, Currencies>
     {
-        public Currencies Convert(Domain.Models.Currencies source, Currencies destination, ResolutionContext context)
+        public Currencies Convert(Domain.Model.Currencies source, Currencies destination, ResolutionContext context)
         {
             Currencies currency;
 
             switch (source)
             {
-                case (Domain.Models.Currencies.Dime):
+                case (Domain.Model.Currencies.Dime):
                     currency = Currencies.Dime;
                     break;
-                case (Domain.Models.Currencies.Dollar):
+                case (Domain.Model.Currencies.Dollar):
                     currency = Currencies.Dollar;
                     break;
-                case (Domain.Models.Currencies.FiveDollars):
+                case (Domain.Model.Currencies.FiveDollars):
                     currency = Currencies.FiveDollars;
                     break;
-                case (Domain.Models.Currencies.HalfDollar):
+                case (Domain.Model.Currencies.HalfDollar):
                     currency = Currencies.HalfDollar;
                     break;
-                case (Domain.Models.Currencies.Nickel):
+                case (Domain.Model.Currencies.Nickel):
                     currency = Currencies.Nickel;
                     break;
-                case (Domain.Models.Currencies.Penny):
+                case (Domain.Model.Currencies.Penny):
                     currency = Currencies.Penny;
                     break;
-                case (Domain.Models.Currencies.Quarter):
+                case (Domain.Model.Currencies.Quarter):
                     currency = Currencies.Quarter;
                     break;
-                case (Domain.Models.Currencies.TenDollars):
+                case (Domain.Model.Currencies.TenDollars):
                     currency = Currencies.TenDollars;
                     break;
-                case (Domain.Models.Currencies.TwentyDollars):
+                case (Domain.Model.Currencies.TwentyDollars):
                     currency = Currencies.TwentyDollars;
                     break;
-                case (Domain.Models.Currencies.TwoDollars):
+                case (Domain.Model.Currencies.TwoDollars):
                     currency = Currencies.TwoDollars;
                     break;
                 default: throw new ArgumentException("Unrecognized Currency");

@@ -1,6 +1,6 @@
 ﻿using CashRegister.Domain.Abstract;
 
-namespace CashRegister.Domain.Models
+namespace CashRegister.Domain.Model
 {
     public class CashRegister : ICashRegister
     {

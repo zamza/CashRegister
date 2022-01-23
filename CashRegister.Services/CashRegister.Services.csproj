@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CashRegister.Data\CashRegister.Data.csproj" />
+    <ProjectReference Include="..\CashRegister.Domain\CashRegister.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

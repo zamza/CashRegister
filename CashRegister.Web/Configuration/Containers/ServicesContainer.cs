@@ -1,10 +1,13 @@
-﻿using CashRegister.Domain;
+﻿using AutoMapper;
+using CashRegister.Data.Store;
 using CashRegister.Domain.Abstract;
-using CashRegister.Domain.Models;
+using CashRegister.Services.Abstract;
+using CashRegister.Services.Manager;
+using CashRegister.Domain.Model;
 
 namespace CashRegister.Web.Configuration.Containers
 {
-    internal static class DomainContainer
+    internal static class ServicesContainer
     {
         internal static void ConfigureDependencies(IServiceCollection services)
         {
@@ -34,9 +37,11 @@ namespace CashRegister.Web.Configuration.Containers
                 {Currencies.TenDollars, 10M},
                 {Currencies.TwentyDollars, 20M}
             };
-            var cashRegister = new Domain.Models.CashRegister(new CurrencyAmounts(){Amounts = amounts}, denominations);
+            var cashRegister = new Domain.Model.CashRegister(new CurrencyAmounts() { Amounts = amounts }, denominations);
 
-            services.AddScoped<ICashRegister, Domain.Models.CashRegister>(x => cashRegister);
+            services.AddScoped<ICashRegister, Domain.Model.CashRegister>(x => cashRegister);
+            services.AddScoped<CashRegisterRepository, CashRegisterRepository>();
+            services.AddScoped<ICashRegisterManager, CashRegisterManager>();
         }
     }
 }

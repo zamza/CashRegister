@@ -3,13 +3,13 @@ using CashRegister.Web.Models.DTO;
 
 namespace CashRegister.Web.Converters.Outbound
 {
-    public class CurrencyAmountsToCurrencyAmountsConverter : ConverterBase, ITypeConverter<Domain.Models.CurrencyAmounts, CurrencyAmounts>
+    public class CurrencyAmountsToCurrencyAmountsConverter : ConverterBase, ITypeConverter<Domain.Model.CurrencyAmounts, CurrencyAmounts>
     {
         public CurrencyAmountsToCurrencyAmountsConverter(IMapper mapper) : base(mapper)
         {
         }
 
-        public CurrencyAmounts Convert(Domain.Models.CurrencyAmounts source, CurrencyAmounts destination, ResolutionContext context)
+        public CurrencyAmounts Convert(Domain.Model.CurrencyAmounts source, CurrencyAmounts destination, ResolutionContext context)
         {
             CurrencyAmounts currencyAmounts = null;
 

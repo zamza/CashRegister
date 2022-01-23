@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CashRegister.Data\CashRegister.Data.csproj" />
     <ProjectReference Include="..\CashRegister.Domain\CashRegister.Domain.csproj" />
+    <ProjectReference Include="..\CashRegister.Services\CashRegister.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -175,6 +175,20 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "CashRegister.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "CashRegister.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CashRegister.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CashRegister.Data.dll": {}
+        }
+      },
       "CashRegister.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -183,6 +197,20 @@
         },
         "runtime": {
           "bin/placeholder/CashRegister.Domain.dll": {}
+        }
+      },
+      "CashRegister.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CashRegister.Data": "1.0.0",
+          "CashRegister.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CashRegister.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CashRegister.Services.dll": {}
         }
       }
     }
@@ -607,17 +635,29 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "CashRegister.Data/1.0.0": {
+      "type": "project",
+      "path": "../CashRegister.Data/CashRegister.Data.csproj",
+      "msbuildProject": "../CashRegister.Data/CashRegister.Data.csproj"
+    },
     "CashRegister.Domain/1.0.0": {
       "type": "project",
       "path": "../CashRegister.Domain/CashRegister.Domain.csproj",
       "msbuildProject": "../CashRegister.Domain/CashRegister.Domain.csproj"
+    },
+    "CashRegister.Services/1.0.0": {
+      "type": "project",
+      "path": "../CashRegister.Services/CashRegister.Services.csproj",
+      "msbuildProject": "../CashRegister.Services/CashRegister.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper >= 11.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
+      "CashRegister.Data >= 1.0.0",
       "CashRegister.Domain >= 1.0.0",
+      "CashRegister.Services >= 1.0.0",
       "FluentValidation >= 10.3.6",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.14.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
@@ -650,8 +690,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Data\\CashRegister.Data.csproj": {
+              "projectPath": "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Data\\CashRegister.Data.csproj"
+            },
             "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Domain\\CashRegister.Domain.csproj": {
               "projectPath": "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Domain\\CashRegister.Domain.csproj"
+            },
+            "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Services\\CashRegister.Services.csproj": {
+              "projectPath": "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Services\\CashRegister.Services.csproj"
             }
           }
         }

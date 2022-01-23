@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CashRegister.Domain.Abstract;
+﻿using CashRegister.Domain.Abstract;
 
-namespace CashRegister.Domain.Models
+namespace CashRegister.Domain.Model
 {
     public class CurrencyAmounts : ICurrencyAmounts
     {

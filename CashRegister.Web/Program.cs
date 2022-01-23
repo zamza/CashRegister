@@ -1,4 +1,5 @@
 using AutoMapper;
+using CashRegister.Data.Converters;
 using CashRegister.Web.Configuration;
 using CashRegister.Web.Configuration.Containers;
 
@@ -10,18 +11,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(WebMapperConfiguration), typeof(DataMapperConfiguration));
 
-// Add Automapper
-//var mappingConfig = new MapperConfiguration(mapperConfig =>
-//{
-//    mapperConfig.AddProfile(new WebMapperConfiguration());
-//});
-//IMapper autoMapper = mappingConfig.CreateMapper();
-//builder.Services.AddSingleton(autoMapper);
-builder.Services.AddAutoMapper(typeof(WebMapperConfiguration));
+ServicesContainer.ConfigureDependencies(builder.Services);
 
-
-DomainContainer.ConfigureDependencies(builder.Services);
 
 var app = builder.Build();
 

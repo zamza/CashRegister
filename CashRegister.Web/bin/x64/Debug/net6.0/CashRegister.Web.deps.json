@@ -10,7 +10,9 @@
         "dependencies": {
           "AutoMapper": "11.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "CashRegister.Data": "1.0.0",
           "CashRegister.Domain": "1.0.0",
+          "CashRegister.Services": "1.0.0",
           "FluentValidation": "10.3.6",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.14.0",
           "Swashbuckle.AspNetCore": "6.2.3"
@@ -112,9 +114,27 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "CashRegister.Data/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "11.0.0",
+          "CashRegister.Domain": "1.0.0"
+        },
+        "runtime": {
+          "CashRegister.Data.dll": {}
+        }
+      },
       "CashRegister.Domain/1.0.0": {
         "runtime": {
           "CashRegister.Domain.dll": {}
+        }
+      },
+      "CashRegister.Services/1.0.0": {
+        "dependencies": {
+          "CashRegister.Data": "1.0.0",
+          "CashRegister.Domain": "1.0.0"
+        },
+        "runtime": {
+          "CashRegister.Services.dll": {}
         }
       }
     }
@@ -230,7 +250,17 @@
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
+    "CashRegister.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "CashRegister.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CashRegister.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

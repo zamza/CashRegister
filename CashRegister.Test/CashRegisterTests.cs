@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CashRegister.Domain.Models;
+using CashRegister.Domain.Model;
 using NUnit.Framework;
 
 namespace CashRegister.Test
@@ -9,9 +9,9 @@ namespace CashRegister.Test
     [TestFixture]
     public class CashRegisterTests
     {
-        private Domain.Models.CashRegister _cashRegister;
+        private Domain.Model.CashRegister _cashRegister;
         private Dictionary<Currencies, decimal> _denominations;
-        private Domain.Models.Transaction _transaction;
+        private Transaction _transaction;
 
         [SetUp]
         public void Setup()
@@ -46,7 +46,7 @@ namespace CashRegister.Test
                 {Currencies.TenDollars, 10M},
                 {Currencies.TwentyDollars, 20M}
             };
-            _cashRegister = new Domain.Models.CashRegister(currencyAmounts, _denominations);
+            _cashRegister = new Domain.Model.CashRegister(currencyAmounts, _denominations);
 
             var transaction = new Transaction()
             {
@@ -229,7 +229,7 @@ namespace CashRegister.Test
                     {Currencies.Dollar, 10},
                 }
             };
-            var cashRegister = new Domain.Models.CashRegister(amounts, _denominations);
+            var cashRegister = new Domain.Model.CashRegister(amounts, _denominations);
 
             var transaction = new Transaction()
             {

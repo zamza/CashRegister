@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using AutoMapper;
-using CashRegister.Domain;
-using CashRegister.Domain.Abstract;
+using CashRegister.Services.Abstract;
 using CashRegister.Web.Models.DTO;
 using CashRegister.Web.Models.Request;
 using CashRegister.Web.Models.Response;
@@ -15,18 +13,19 @@ namespace CashRegister.Web.Controllers
     {
         private readonly IServiceProvider _container;
         private readonly IMapper _mapper;
+        private readonly ICashRegisterManager _manager;
 
         public CashRegisterController(IServiceProvider provider, IMapper mapper)
         {
             _container = provider;
             _mapper = mapper;
+            _manager = _container.GetService<ICashRegisterManager>();
         }
 
         [HttpGet("amounts")]
         public ActionResult GetAmounts()
         {
-            var cashRegister = _container.GetService<ICashRegister>();
-            var amounts = cashRegister.GetAmounts();
+            var amounts = _manager.GetAmountInCashRegister();
             var responseAmounts = _mapper.Map<CurrencyAmounts>(amounts);
             var response = new GetAmountsResponse()
             {
@@ -39,8 +38,7 @@ namespace CashRegister.Web.Controllers
         [HttpPost("cash")]
         public ActionResult AddCash(AddCashRequest request)
         {
-            var cashRegister = _container.GetService<ICashRegister>();
-            var amounts = cashRegister.AddCash(_mapper.Map<Domain.Models.CurrencyAmounts>(request.CurrencyAmounts));
+            var amounts = _manager.AddCashToCashRegister(_mapper.Map<Domain.Model.CurrencyAmounts>(request.CurrencyAmounts));
             var response = new AddCashResponse()
             {
                 CurrencyAmounts = _mapper.Map<CurrencyAmounts>(amounts)
@@ -52,9 +50,7 @@ namespace CashRegister.Web.Controllers
         [HttpPost("payment")]
         public ActionResult MakePayment(MakePaymentRequest request)
         {
-            var cashRegister = _container.GetService<ICashRegister>();
-            var transaction = _mapper.Map<Transaction, Domain.Models.Transaction>(request.Transaction);
-            var amounts = cashRegister.TakePayment(transaction);
+            var amounts = _manager.HandlePayment(_mapper.Map<Transaction, Domain.Model.Transaction>(request.Transaction));
             var response = new MakePaymentResponse()
             {
                 CurrencyAmounts = _mapper.Map<CurrencyAmounts>(amounts)
