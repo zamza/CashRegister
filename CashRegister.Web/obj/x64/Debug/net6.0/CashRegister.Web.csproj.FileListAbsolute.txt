@@ -27,3 +27,4 @@ C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\obj\x64\Debug\n
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\obj\x64\Debug\net6.0\CashRegister.Web.genruntimeconfig.cache
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\bin\x64\Debug\net6.0\AutoMapper.dll
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\bin\x64\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Web\bin\x64\Debug\net6.0\FluentValidation.dll

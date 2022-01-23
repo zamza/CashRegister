@@ -1,0 +1,16 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4c401ed6_002D99d0_002D47e5_002D9e02_002D994b1cae23f8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AddCashUpdatesTotals" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.AddCash_ThrowsExceptionsWhenUsingUnrecognizedCurrency&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.TakePayment_ReturnsExpectedAmounts&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.AddCash_UpdateDenominationsUpdatesOnlyThoseDenominations&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.TakePayment_AddSpentAmountsToRegisterAmountTotals&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.TakePayment_SubtractChangeAmountsFromRegisterAmountTotals&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.AddCash_NegativePaymentThrowsException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.TakePayment_NegativePaymentThrowsException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.TakePayment_ReturnsTrueWhenUsesFullAmount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.TakePayment_ThrowsExceptionWhenAmountsDontCoverCost&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.TakePayment_ThrowsExceptionWhenCantMakeChange&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BC1088A9-D8CA-4155-BB4D-61AEB9CC6047::net6.0::CashRegister.Test.CashRegisterTests.TakePayment_ThrowsExceptionsWhenUsingUnrecognizedCurrency&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

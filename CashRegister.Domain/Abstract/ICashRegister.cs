@@ -11,13 +11,7 @@ namespace CashRegister.Domain.Abstract
     {
         Dictionary<Currencies, int> AddCash(Dictionary<Currencies, int> transaction);
 
-        bool CanAmountsCoverTransaction(Dictionary<Currencies, int> amountPayed);
-
-        bool CanAmountsCoverTransaction(decimal amountPayed);
-
         Dictionary<Currencies, int> GetAmounts();
-
-        bool IsTransactionDenominationsValid(Transaction transaction);
 
         Dictionary<Currencies, int> TakePayment(Transaction transaction);
     }
