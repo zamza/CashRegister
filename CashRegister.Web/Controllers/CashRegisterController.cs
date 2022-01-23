@@ -27,10 +27,10 @@ namespace CashRegister.Web.Controllers
         {
             var cashRegister = _container.GetService<ICashRegister>();
             var amounts = cashRegister.GetAmounts();
-            var responseAmounts = _mapper.Map<Dictionary<Currencies, int>>(amounts);
+            var responseAmounts = _mapper.Map<CurrencyAmounts>(amounts);
             var response = new GetAmountsResponse()
             {
-                Amounts = responseAmounts
+                CurrencyAmounts = responseAmounts
             };
 
             return Ok(response);
@@ -40,10 +40,10 @@ namespace CashRegister.Web.Controllers
         public ActionResult AddCash(AddCashRequest request)
         {
             var cashRegister = _container.GetService<ICashRegister>();
-            var amounts = cashRegister.AddCash(_mapper.Map<Dictionary<Domain.Models.Currencies, int>>(request.Amounts));
+            var amounts = cashRegister.AddCash(_mapper.Map<Domain.Models.CurrencyAmounts>(request.CurrencyAmounts));
             var response = new AddCashResponse()
             {
-                Amounts = _mapper.Map<Dictionary<Currencies, int>>(amounts)
+                CurrencyAmounts = _mapper.Map<CurrencyAmounts>(amounts)
             };
 
             return Ok(response);
@@ -57,7 +57,7 @@ namespace CashRegister.Web.Controllers
             var amounts = cashRegister.TakePayment(transaction);
             var response = new MakePaymentResponse()
             {
-                Amounts = _mapper.Map<Dictionary<Currencies, int>>(amounts)
+                CurrencyAmounts = _mapper.Map<CurrencyAmounts>(amounts)
             };
 
             return Ok(response);

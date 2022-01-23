@@ -3,13 +3,10 @@ using CashRegister.Web.Models.DTO;
 
 namespace CashRegister.Web.Converters.Inbound
 {
-    public class TransactionToTransactionConverter : ITypeConverter<Transaction, Domain.Models.Transaction>
+    public class TransactionToTransactionConverter : ConverterBase, ITypeConverter<Transaction, Domain.Models.Transaction>
     {
-        private readonly IMapper _mapper;
-
-        public TransactionToTransactionConverter(IMapper mapper)
+        public TransactionToTransactionConverter(IMapper mapper) : base(mapper)
         {
-            _mapper = mapper;
         }
 
         public Domain.Models.Transaction Convert(Transaction source, Domain.Models.Transaction destination, ResolutionContext context)
@@ -20,7 +17,7 @@ namespace CashRegister.Web.Converters.Inbound
             {
                 transaction = new Domain.Models.Transaction
                 {
-                    AmountsPaid = _mapper.Map<Dictionary<Domain.Models.Currencies, int>>(source.AmountsPaid),
+                    AmountsPaid = _mapper.Map<Domain.Models.CurrencyAmounts>(source.AmountsPaid),
                     Cost = source.Cost
                 };
             }

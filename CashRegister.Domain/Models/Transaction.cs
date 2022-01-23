@@ -2,7 +2,7 @@
 {
     public class Transaction
     {
-        public Dictionary<Currencies, int> AmountsPaid { get; set; }
+        public CurrencyAmounts AmountsPaid { get; set; }
 
         public decimal Cost { get; set; }
     }

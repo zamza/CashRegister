@@ -7,12 +7,10 @@ using CashRegister.Domain.Models;
 
 namespace CashRegister.Domain.Abstract
 {
-    public interface ICashRegister
+    internal interface ICurrencyAmounts
     {
-        CurrencyAmounts AddCash(CurrencyAmounts transaction);
+        Dictionary<Currencies, int> Amounts { get; set; }
 
-        CurrencyAmounts GetAmounts();
-
-        CurrencyAmounts TakePayment(Transaction transaction);
+        decimal SumAmounts(Dictionary<Currencies, decimal> denominations);
     }
 }

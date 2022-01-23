@@ -34,7 +34,7 @@ namespace CashRegister.Web.Configuration.Containers
                 {Currencies.TenDollars, 10M},
                 {Currencies.TwentyDollars, 20M}
             };
-            var cashRegister = new Domain.Models.CashRegister(amounts, denominations);
+            var cashRegister = new Domain.Models.CashRegister(new CurrencyAmounts(){Amounts = amounts}, denominations);
 
             services.AddScoped<ICashRegister, Domain.Models.CashRegister>(x => cashRegister);
         }

@@ -12,9 +12,11 @@ namespace CashRegister.Web.Configuration
             //Inbound
             CreateMap<Transaction, Domain.Models.Transaction>().ConvertUsing<Inbound.TransactionToTransactionConverter>();
             CreateMap<Currencies, Domain.Models.Currencies>().ConvertUsing<Inbound.CurrenciesToCurrenciesConverter>();
+            CreateMap<CurrencyAmounts, Domain.Models.CurrencyAmounts>().ConvertUsing<Inbound.CurrencyAmountsToCurrencyAmountsConverter>();
 
             //Outbound
             CreateMap<Domain.Models.Currencies, Currencies>().ConvertUsing<Outbound.CurrenciesToCurrenciesConverter>();
+            CreateMap<Domain.Models.CurrencyAmounts, CurrencyAmounts>().ConvertUsing<Outbound.CurrencyAmountsToCurrencyAmountsConverter >();
         }
     }
 }
