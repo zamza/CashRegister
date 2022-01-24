@@ -1,40 +1,146 @@
 body {
-  font-family:"Calibri"
+  background-color: #f0f1ff;
+  font-family:"Calibri";
 }
 
-a {
-  color: #0366d6;
-}
-
-code {
-  color: #E01A76;
-}
-
-.btn-primary {
-  color: #fff;
+header {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  padding-left: 15px;
   background-color: #1b6ec2;
-  border-color: #1861ac;
+  color: #fff
+}
+
+input {
+  padding: 4px 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+label {
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+}
+
+table th {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+table tr td {
+  vertical-align: middle;
+}
+
+.button {
+  color: #fff;
+  border-radius: 6rem;
+  padding: 5px 20px;
+  height: 35px;
+  border: none;
+  min-width: 100px;
+  transition: background-color .25s ease-in;
+}
+
+.button__increase {
+  background-color: #ac511c;
+}
+
+.button__increase:disabled {
+  background-color: #be947c;
+}
+
+.button__decrease {
+  background-color: #23b43b;
+}
+.button__decrease:disabled {
+  background-color: #619c6b;
+}
+
+.button__submit {
+  background-color: #1b6ec2;
+}
+
+.button__submit:disabled {
+  background-color: #7d98b3;
+}
+
+.cost-input {
+  width: 100px;
+}
+
+.currency-amount__display {
+  width: 50px;
+}
+
+.error-message {
+  color: red;
+}
+
+.flex {
+  display: flex;
+}
+
+.form-submit {
+  float: right;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon > i {
+  position: absolute;
+  display: block;
+  transform: translate(0, -50%);
+  top: 50%;
+  pointer-events: none;
+  width: 25px;
+  text-align: center;
+  font-style: normal;
+}
+
+.input-icon > input {
+  padding-left: 25px;
+  padding-right: 0;
+}
+
+.input-icon-right > i {
+  right: 0;
+}
+
+.input-icon-right > input {
+  padding-left: 0;
+  padding-right: 25px;
+  text-align: right;
 }
 
 .panel {
-  background-color: #eee;
-  border: 1px solid #bbb;
+  background-color: #fff;
+  border: none;
   border-radius: 4px;
+  border: 1px solid #ddd;
   margin-bottom: 15px;
-
+  padding: 0 0 0.5rem;
+  /* height: 30px; */
 }
 
 .panel__header {
-  padding-left: 10px;
-  padding-top: 10px;
+  padding-left: 15px;
+  padding-top: 15px;
   border-bottom: 1px solid #bbb;
+  font-weight: bold;
 }
 
 .panel__content {
   padding: 15px;
 }
 
-header {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-  padding-left: 15px;
+.table-column {
+  width: 120px;
+  text-align: center;
+}
+
+.total-rows {
+  border-top: 1px solid #000;
 }

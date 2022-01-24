@@ -26,49 +26,76 @@ namespace CashRegister.Client.Controllers
         [HttpGet("amounts")]
         public ActionResult GetAmounts()
         {
-            var currentAmounts = _manager.GetAmountInCashRegister();
-            var response = new GetAmountsResponse()
+            try
             {
-                Amounts = _mapper.Map<List<DenominationAmount>>(currentAmounts.Amounts),
-            };
+                var currentAmounts = _manager.GetAmountInCashRegister();
+                var response = new GetAmountsResponse()
+                {
+                    Amounts = _mapper.Map<List<DenominationAmount>>(currentAmounts.Amounts),
+                };
 
-            return Ok(response);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("denominations")]
         public ActionResult GetDenominations()
         {
-            var denominations = _manager.GetDenominations();
-            var response = new GetDenominationsResponse()
-            {
-                Denominations = _mapper.Map<List<DenominationValue>>(denominations)
-            };
+            try {
+                var denominations = _manager.GetDenominations();
+                var response = new GetDenominationsResponse()
+                {
+                    Denominations = _mapper.Map<List<DenominationValue>>(denominations)
+                };
 
-            return Ok(response);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("cash")]
         public ActionResult AddCash(AddCashRequest request)
         {
-            var amounts = _manager.AddCashToCashRegister(_mapper.Map<Domain.Model.CurrencyAmounts>(request.CurrencyAmounts));
-            var response = new AddCashResponse()
+            try
             {
-                CurrencyAmounts = _mapper.Map<CurrencyAmounts>(amounts)
-            };
+                var amounts =
+                    _manager.AddCashToCashRegister(_mapper.Map<Domain.Model.CurrencyAmounts>(request.CurrencyAmounts));
+                var response = new AddCashResponse()
+                {
+                    CurrencyAmounts = _mapper.Map<CurrencyAmounts>(amounts)
+                };
 
-            return Ok(response);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("payment")]
         public ActionResult MakePayment(MakePaymentRequest request)
         {
-            var amounts = _manager.HandlePayment(_mapper.Map<Transaction, Domain.Model.Transaction>(request.Transaction));
-            var response =  new MakePaymentResponse()
-            {
-                CurrencyAmounts = _mapper.Map<CurrencyAmounts>(amounts)
-            };
+            try {
+                var amounts = _manager.HandlePayment(_mapper.Map<Transaction, Domain.Model.Transaction>(request.Transaction));
+                var response =  new MakePaymentResponse()
+                {
+                    CurrencyAmounts = _mapper.Map<CurrencyAmounts>(amounts)
+                };
 
-            return Ok(response);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
