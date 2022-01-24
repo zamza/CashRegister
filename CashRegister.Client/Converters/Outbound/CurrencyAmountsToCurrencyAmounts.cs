@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CashRegister.Web.Models.DTO;
+using CashRegister.Client.Models.DTO;
 
 namespace CashRegister.Client.Converters.Outbound
 {
@@ -17,7 +17,7 @@ namespace CashRegister.Client.Converters.Outbound
             {
                 currencyAmounts = new CurrencyAmounts()
                 {
-                    Amounts = _mapper.Map<Dictionary<Currencies, int>>(source.Amounts)
+                    Amounts = _mapper.Map<List<DenominationAmount>>(source.Amounts)
                 };
             }
 

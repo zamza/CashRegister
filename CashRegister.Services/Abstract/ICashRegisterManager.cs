@@ -8,6 +8,8 @@ namespace CashRegister.Services.Abstract
 
         CurrencyAmounts GetAmountInCashRegister();
 
+        Dictionary<Currencies, decimal> GetDenominations();
+
         CurrencyAmounts HandlePayment(Transaction transaction);
     }
 }

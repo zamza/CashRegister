@@ -12,16 +12,16 @@ namespace CashRegister.Client.Configuration.Containers
         {
             var amounts = new Dictionary<Currencies, int>()
             {
-                {Currencies.Penny, 2000},
-                {Currencies.Nickel, 0},
-                {Currencies.Dime, 0},
-                {Currencies.Quarter, 0},
-                {Currencies.HalfDollar, 0},
-                {Currencies.Dollar, 0},
-                {Currencies.TwoDollars, 0},
-                {Currencies.FiveDollars, 0},
-                {Currencies.TenDollars, 0},
-                {Currencies.TwentyDollars, 2}
+                {Currencies.Penny, 500},
+                {Currencies.Nickel, 200},
+                {Currencies.Dime, 500},
+                {Currencies.Quarter, 250},
+                {Currencies.HalfDollar, 25},
+                {Currencies.Dollar, 500},
+                {Currencies.TwoDollars, 20},
+                {Currencies.FiveDollars, 250},
+                {Currencies.TenDollars, 200},
+                {Currencies.TwentyDollars, 100}
             };
             var denominations = new Dictionary<Currencies, decimal>()
             {

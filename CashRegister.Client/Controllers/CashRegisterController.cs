@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
+using CashRegister.Client.Models.DTO;
+using CashRegister.Client.Models.Request;
+using CashRegister.Client.Models.Response;
 using CashRegister.Services.Abstract;
-using CashRegister.Web.Models.DTO;
 using CashRegister.Web.Models.Request;
-using CashRegister.Web.Models.Response;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CashRegister.Client.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CashRegisterController : ControllerBase
     {
@@ -22,14 +23,25 @@ namespace CashRegister.Client.Controllers
             _manager = _container.GetService<ICashRegisterManager>();
         }
 
-        [HttpGet]
+        [HttpGet("amounts")]
         public ActionResult GetAmounts()
         {
-            var amounts = _manager.GetAmountInCashRegister();
-            var responseAmounts = _mapper.Map<CurrencyAmounts>(amounts);
+            var currentAmounts = _manager.GetAmountInCashRegister();
             var response = new GetAmountsResponse()
             {
-                CurrencyAmounts = responseAmounts
+                Amounts = _mapper.Map<List<DenominationAmount>>(currentAmounts.Amounts),
+            };
+
+            return Ok(response);
+        }
+
+        [HttpGet("denominations")]
+        public ActionResult GetDenominations()
+        {
+            var denominations = _manager.GetDenominations();
+            var response = new GetDenominationsResponse()
+            {
+                Denominations = _mapper.Map<List<DenominationValue>>(denominations)
             };
 
             return Ok(response);

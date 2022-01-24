@@ -1,7 +1,7 @@
-﻿namespace CashRegister.Web.Models.DTO
+﻿namespace CashRegister.Client.Models.DTO
 {
     public class CurrencyAmounts
     {
-        public Dictionary<Currencies, int> Amounts { get; set; }
+        public List<DenominationAmount> Amounts { get; set; }
     }
 }

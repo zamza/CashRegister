@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CashRegister.Web.Models.DTO;
+using CashRegister.Client.Models.DTO;
 
 namespace CashRegister.Client.Converters.Inbound
 {
@@ -13,11 +13,16 @@ namespace CashRegister.Client.Converters.Inbound
         {
             Domain.Model.Transaction transaction = null;
 
+            var amountsPaid = new Domain.Model.CurrencyAmounts()
+            {
+                Amounts = _mapper.Map<Dictionary<Domain.Model.Currencies, int>>(source.AmountsPaid)
+            };
+
             if (source != null)
             {
                 transaction = new Domain.Model.Transaction
                 {
-                    AmountsPaid = _mapper.Map<Domain.Model.CurrencyAmounts>(source.AmountsPaid),
+                    AmountsPaid = amountsPaid,
                     Cost = source.Cost
                 };
             }

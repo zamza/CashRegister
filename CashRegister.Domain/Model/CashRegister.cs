@@ -28,6 +28,11 @@ namespace CashRegister.Domain.Model
             return _amounts;
         }
 
+        public Dictionary<Currencies, decimal> GetDenominations()
+        {
+            return _denominations;
+        }
+
         public CurrencyAmounts TakePayment(Transaction transaction)
         {
             CheckAmountPaidDenominationsValid(transaction.AmountsPaid);

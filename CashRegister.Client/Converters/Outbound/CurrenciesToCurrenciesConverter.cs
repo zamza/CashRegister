@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CashRegister.Web.Models.DTO;
+using CashRegister.Client.Models.DTO;
 
 namespace CashRegister.Client.Converters.Outbound
 {

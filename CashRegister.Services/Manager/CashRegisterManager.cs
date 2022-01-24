@@ -26,6 +26,11 @@ namespace CashRegister.Services.Manager
             return _cashRegister.GetAmounts();
         }
 
+        public Dictionary<Currencies, decimal> GetDenominations()
+        {
+            return _cashRegister.GetDenominations();
+        }
+
         public CurrencyAmounts HandlePayment(Transaction transaction)
         {
             return _cashRegister.TakePayment(transaction);

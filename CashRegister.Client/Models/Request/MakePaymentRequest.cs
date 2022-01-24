@@ -1,6 +1,6 @@
-﻿using CashRegister.Web.Models.DTO;
+﻿using CashRegister.Client.Models.DTO;
 
-namespace CashRegister.Web.Models.Request
+namespace CashRegister.Client.Models.Request
 {
     public class MakePaymentRequest
     {

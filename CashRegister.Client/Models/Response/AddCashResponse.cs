@@ -1,6 +1,6 @@
-﻿using CashRegister.Web.Models.DTO;
+﻿using CashRegister.Client.Models.DTO;
 
-namespace CashRegister.Web.Models.Response
+namespace CashRegister.Client.Models.Response
 {
     public class AddCashResponse
     {
