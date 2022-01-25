@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DenominationTypes from '../constants/DenominationTypes';
 
 export class TakePayment extends Component {
 static displayName = TakePayment.name;
@@ -6,18 +7,9 @@ static displayName = TakePayment.name;
   constructor(props) {
     super(props);
 
-    let amounts = this.props.denominations.map(denomination => {
-        return {
-            details: denomination,
-            denomination: denomination.name,
-            amount: 0,
-        }
-    });
-
     this.state = {
-        denominations: this.props.denominations,
         loading: true,
-        currencyAmounts: amounts,
+        currencyAmounts: [],
         cost: 0,
         total: 0,
         errorMessage: '',
@@ -29,9 +21,13 @@ static displayName = TakePayment.name;
     this.clearAmounts = this.clearAmounts.bind(this);
   }
 
+  componentDidMount() {
+    this.populateDenominations();
+  }
+
   calculateTotals() {
     let total = this.state.currencyAmounts.reduce((rollingTotal, currencyAmount) => {
-      let currencyPaid = currencyAmount.amount * currencyAmount.details.value;
+      let currencyPaid = currencyAmount.amount * currencyAmount.value;
       return rollingTotal += currencyPaid;
     }, 0).toFixed(2);
     this.setState({total: total})
@@ -49,9 +45,9 @@ static displayName = TakePayment.name;
       this.setState({cost: event.target.value})
   }
 
-  updateAmount(denomination, adjustment) {
+  updateAmount(currencyDenomination, adjustment) {
     let amounts = this.state.currencyAmounts;
-    let amountToUpdate = amounts.find(amount => amount.denomination === denomination.details.name);
+    let amountToUpdate = amounts.find(amount => amount.denomination === currencyDenomination.denomination);
     if (amountToUpdate.amount + adjustment >= 0)
     {
         amountToUpdate.amount += adjustment;
@@ -60,19 +56,38 @@ static displayName = TakePayment.name;
     }
   }
 
+  async populateDenominations() {
+    const response = await fetch('cashregister/denominations');
+    const data = await response.json();
+    this.setState(
+      { 
+        currencyAmounts: data.denominations.map(denomination => {
+          return {
+            denomination: denomination.name,
+            display: DenominationTypes.find(x => x.value === denomination.name)?.display,
+            value: denomination.value,
+            amount: 0
+          }
+        }),
+      });
+  }
+
   async makePayment() {
     this.setState({errorMessage: ''});
+    let amountsPaid = this.state.currencyAmounts.map(currencyType => {return {denomination: currencyType.denomination, amount: currencyType.amount}});
     let request = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify({transaction: {
-            amountsPaid: this.state.currencyAmounts.map(currencyType => {return {denomination: currencyType.denomination, amount: currencyType.amount}}),
+            amountsPaid,
             cost: this.state.cost 
         }})
     };
     await fetch('cashregister/payment', request).then(response => {
       if (!response.ok) { throw response }
-      this.props.callback();
+      response.json().then(data => {
+        this.props.callback(amountsPaid, data.currencyAmounts.amounts);
+      })
       this.clearAmounts();
     }).catch((error) => {
       error.text().then(errorMessage => {
@@ -99,11 +114,11 @@ static displayName = TakePayment.name;
               </thead>
               <tbody>
               {this.state.currencyAmounts.map(denomination => 
-                <tr key={denomination.details.display}>
-                  <td><b>{denomination.details.display} (${denomination.details.value}):</b></td>
-                  <td class="table-column"><button type="button" className="button button__increase" disabled={denomination.amount < 1} onClick={() => this.updateAmount(denomination, -1)}>-${denomination.details.value}</button></td>
+                <tr key={denomination.display}>
+                  <td><b>{denomination.display} (${denomination.value}):</b></td>
+                  <td class="table-column"><button type="button" className="button button__increase" disabled={denomination.amount < 1} onClick={() => this.updateAmount(denomination, -1)}>-${denomination.value}</button></td>
                   <td class="table-column">{denomination.amount}</td>
-                  <td class="table-column"><button type="button" className="button button__decrease" onClick={() => this.updateAmount(denomination, +1)}>+${denomination.details.value}</button></td>
+                  <td class="table-column"><button type="button" className="button button__decrease" onClick={() => this.updateAmount(denomination, +1)}>+${denomination.value}</button></td>
                 </tr>
               )}
                 <tr class="total-rows">
@@ -121,7 +136,7 @@ static displayName = TakePayment.name;
             <span class="error-message">{this.state.errorMessage}</span>
             <br/>
             <div class="form-submit">
-              <button class="button button__submit" type="submit" disabled={(this.state.cost > this.state.total) || this.state.cost < .01} onClick={this.makePayment}>Make Payment</button>
+              <button class="button button__submit" type="submit" disabled={(parseFloat(this.state.cost) > parseFloat(this.state.total)) || this.state.cost < .01} onClick={this.makePayment}>Make Payment</button>
             </div>
           </div>          
       </div>

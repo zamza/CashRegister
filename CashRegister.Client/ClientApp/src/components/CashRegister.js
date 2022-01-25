@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Amounts } from './Amounts';
+import { MakeChange} from './MakeChange';
 import { TakePayment } from './TakePayment';
 import DenominationTypes from '../constants/DenominationTypes';
 
@@ -10,19 +11,19 @@ static displayName = CashRegister.name;
     super(props);
     this.state = {
         amounts: [],
-        denominations: [],
-        totalAmounts: 0
+        changeTendered: [],
+        amountsProvided: [],
     };
     this.amountChangeCallback = this.amountChangeCallback.bind(this);
   }
 
   componentDidMount() {
     this.populateAmounts();
-    this.populateDenominations();
   }
 
-  amountChangeCallback() {
+  amountChangeCallback(amountsProvided, changeTendered) {
     this.populateAmounts();
+    this.setState({ amountsProvided: amountsProvided, changeTendered: changeTendered })
   }
 
   render() {
@@ -30,10 +31,8 @@ static displayName = CashRegister.name;
       <div>
           <Amounts key={this.state.totalAmounts} amounts = {this.state.amounts} />
           <div class="flex">
-            <TakePayment key={this.state.denominations} denominations = {this.state.denominations} callback = {this.amountChangeCallback}/>
-            <div class="panel">
-              <TakePayment key={this.state.denominations} denominations = {this.state.denominations} callback = {this.amountChangeCallback}/>
-            </div>
+            <TakePayment callback = {this.amountChangeCallback}/>
+            <MakeChange key={this.state.changeTendered} changeTendered = {this.state.changeTendered} amountsProvided = { this.state.amountsProvided }/>
           </div>
       </div>
     );
@@ -48,21 +47,6 @@ static displayName = CashRegister.name;
           return {
             denomination: DenominationTypes.find(x => x.value === currencyAmount.denomination)?.display,
             amount: currencyAmount?.amount
-          }
-        }), 
-      });
-  }
-
-  async populateDenominations() {
-    const response = await fetch('cashregister/denominations');
-    const data = await response.json();
-    this.setState(
-      { 
-        denominations: data.denominations.map(denomination => {
-          return {
-            name: denomination.name,
-            value: denomination.value, 
-            display: DenominationTypes.find(x => x.value === denomination.name)?.display
           }
         }),
       });
