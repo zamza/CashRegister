@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Amounts } from './Amounts';
 import { MakeChange} from './MakeChange';
 import { TakePayment } from './TakePayment';
-import DenominationTypes from '../constants/DenominationTypes';
 
 export class CashRegister extends Component {
 static displayName = CashRegister.name;
@@ -45,7 +44,7 @@ static displayName = CashRegister.name;
       { 
         amounts: data.amounts.map(currencyAmount => {
           return {
-            denomination: DenominationTypes.find(x => x.value === currencyAmount.denomination)?.display,
+            denomination: currencyAmount.denomination,
             amount: currencyAmount?.amount
           }
         }),

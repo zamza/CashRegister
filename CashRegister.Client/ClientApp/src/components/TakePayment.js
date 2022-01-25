@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DenominationTypes from '../constants/DenominationTypes';
+import denominationDisplayName from '../helpers/denominationDisplayName';
 
 export class TakePayment extends Component {
 static displayName = TakePayment.name;
@@ -64,7 +64,6 @@ static displayName = TakePayment.name;
         currencyAmounts: data.denominations.map(denomination => {
           return {
             denomination: denomination.name,
-            display: DenominationTypes.find(x => x.value === denomination.name)?.display,
             value: denomination.value,
             amount: 0
           }
@@ -113,12 +112,12 @@ static displayName = TakePayment.name;
                 </tr>
               </thead>
               <tbody>
-              {this.state.currencyAmounts.map(denomination => 
-                <tr key={denomination.display}>
-                  <td><b>{denomination.display} (${denomination.value}):</b></td>
-                  <td class="table-column"><button type="button" className="button button__increase" disabled={denomination.amount < 1} onClick={() => this.updateAmount(denomination, -1)}>-${denomination.value}</button></td>
-                  <td class="table-column">{denomination.amount}</td>
-                  <td class="table-column"><button type="button" className="button button__decrease" onClick={() => this.updateAmount(denomination, +1)}>+${denomination.value}</button></td>
+              {this.state.currencyAmounts.map(currencyDenomination => 
+                <tr key={denominationDisplayName(currencyDenomination.denomination)}>
+                  <td><b>{denominationDisplayName(currencyDenomination.denomination)} (${currencyDenomination.value}):</b></td>
+                  <td class="table-column"><button type="button" className="button button__increase" disabled={currencyDenomination.amount < 1} onClick={() => this.updateAmount(currencyDenomination, -1)}>-${currencyDenomination.value}</button></td>
+                  <td class="table-column">{currencyDenomination.amount}</td>
+                  <td class="table-column"><button type="button" className="button button__decrease" onClick={() => this.updateAmount(currencyDenomination, +1)}>+${currencyDenomination.value}</button></td>
                 </tr>
               )}
                 <tr class="total-rows">
