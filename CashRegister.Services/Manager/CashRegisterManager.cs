@@ -1,5 +1,4 @@
-﻿using CashRegister.Data.Store;
-using CashRegister.Domain.Abstract;
+﻿using CashRegister.Domain.Abstract;
 using CashRegister.Domain.Model;
 using CashRegister.Services.Abstract;
 
@@ -8,12 +7,10 @@ namespace CashRegister.Services.Manager
     public class CashRegisterManager : ICashRegisterManager
     {
         private readonly ICashRegister _cashRegister;
-        private readonly CashRegisterRepository _cashRegisterRepository;
 
-        public CashRegisterManager(ICashRegister cashRegister, CashRegisterRepository cashRegisterRepository)
+        public CashRegisterManager(ICashRegister cashRegister)
         {
             _cashRegister = cashRegister;
-            _cashRegisterRepository = cashRegisterRepository;
         }
 
         public CurrencyAmounts AddCashToCashRegister(CurrencyAmounts currencyAmounts)

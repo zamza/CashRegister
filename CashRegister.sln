@@ -7,11 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashRegister.Domain", "Cash
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashRegister.Test", "CashRegister.Test\CashRegister.Test.csproj", "{BC1088A9-D8CA-4155-BB4D-61AEB9CC6047}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashRegister.Data", "CashRegister.Data\CashRegister.Data.csproj", "{B3C32C2C-58FA-4579-A46F-19A05C3E8992}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashRegister.Services", "CashRegister.Services\CashRegister.Services.csproj", "{07D4106E-4F6E-4449-8637-80C19E1D547E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashRegister.Client", "CashRegister.Client\CashRegister.Client.csproj", "{A92187C2-F697-4095-B043-AFC3043AEDFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashRegister.Client", "CashRegister.Client\CashRegister.Client.csproj", "{A92187C2-F697-4095-B043-AFC3043AEDFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +35,6 @@ Global
 		{BC1088A9-D8CA-4155-BB4D-61AEB9CC6047}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC1088A9-D8CA-4155-BB4D-61AEB9CC6047}.Release|x64.ActiveCfg = Release|Any CPU
 		{BC1088A9-D8CA-4155-BB4D-61AEB9CC6047}.Release|x64.Build.0 = Release|Any CPU
-		{B3C32C2C-58FA-4579-A46F-19A05C3E8992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3C32C2C-58FA-4579-A46F-19A05C3E8992}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3C32C2C-58FA-4579-A46F-19A05C3E8992}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{B3C32C2C-58FA-4579-A46F-19A05C3E8992}.Debug|x64.Build.0 = Debug|Any CPU
-		{B3C32C2C-58FA-4579-A46F-19A05C3E8992}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3C32C2C-58FA-4579-A46F-19A05C3E8992}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B3C32C2C-58FA-4579-A46F-19A05C3E8992}.Release|x64.ActiveCfg = Release|Any CPU
-		{B3C32C2C-58FA-4579-A46F-19A05C3E8992}.Release|x64.Build.0 = Release|Any CPU
 		{07D4106E-4F6E-4449-8637-80C19E1D547E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07D4106E-4F6E-4449-8637-80C19E1D547E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07D4106E-4F6E-4449-8637-80C19E1D547E}.Debug|x64.ActiveCfg = Debug|Any CPU

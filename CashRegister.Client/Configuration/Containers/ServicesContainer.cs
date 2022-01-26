@@ -1,5 +1,4 @@
-﻿using CashRegister.Data.Store;
-using CashRegister.Domain.Abstract;
+﻿using CashRegister.Domain.Abstract;
 using CashRegister.Domain.Model;
 using CashRegister.Services.Abstract;
 using CashRegister.Services.Manager;
@@ -39,7 +38,6 @@ namespace CashRegister.Client.Configuration.Containers
             var cashRegister = new Domain.Model.CashRegister(new CurrencyAmounts() { Amounts = amounts }, denominations);
 
             services.AddScoped<ICashRegister, Domain.Model.CashRegister>(x => cashRegister);
-            services.AddScoped<CashRegisterRepository, CashRegisterRepository>();
             services.AddScoped<ICashRegisterManager, CashRegisterManager>();
         }
     }

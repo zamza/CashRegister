@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "68W8lQdn6cLPTLv/1OrnClEng2jz85GXKqcpFOTKCATFQQdesQZONKvEN21VFwKuAGhAUWTEDgOKqxa2GoRsag==",
+  "dgSpecHash": "amXHhDuob77VY67VFwusuLpz5Wg2jPQdAsiQnZwKENEuC+dGBWkGgvFIG8P5yzV+PYFSenzZFi6gLDf5xFjgSg==",
   "success": true,
   "projectFilePath": "C:\\Workspace\\c#\\benetech-interview\\CashRegister\\CashRegister.Services\\CashRegister.Services.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\pmgal\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
-    "C:\\Users\\pmgal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

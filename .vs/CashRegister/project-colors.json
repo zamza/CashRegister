@@ -35,7 +35,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "a92187c2-f697-4095-b043-afc3043aedfe": {
+      "ProjectGuid": "a92187c2-f697-4095-b043-afc3043aedfe",
+      "DisplayName": "CashRegister.Client",
+      "ColorIndex": 6
+    },
+    "d1a0cb3c-5c5b-4475-a82f-60a3d2a78d52": {
+      "ProjectGuid": "d1a0cb3c-5c5b-4475-a82f-60a3d2a78d52",
+      "DisplayName": "CashRegister.Web",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 8
 }

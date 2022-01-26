@@ -13,5 +13,3 @@ C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Services\obj\Debug\
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Services\bin\Debug\net6.0\CashRegister.Domain.dll
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Services\bin\Debug\net6.0\CashRegister.Domain.pdb
 C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Services\obj\Debug\net6.0\CashRegister.Services.csproj.CopyComplete
-C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Services\bin\Debug\net6.0\CashRegister.Data.dll
-C:\Workspace\c#\benetech-interview\CashRegister\CashRegister.Services\bin\Debug\net6.0\CashRegister.Data.pdb

@@ -1,7 +1,6 @@
 using System.Text.Json.Serialization;
 using CashRegister.Client.Configuration;
 using CashRegister.Client.Configuration.Containers;
-using CashRegister.Data.Converters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +11,7 @@ builder.Services.AddControllers()
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAutoMapper(typeof(WebMapperConfiguration), typeof(DataMapperConfiguration));
+builder.Services.AddAutoMapper(typeof(WebMapperConfiguration));
 ServicesContainer.ConfigureDependencies(builder.Services);
 
 var app = builder.Build();
