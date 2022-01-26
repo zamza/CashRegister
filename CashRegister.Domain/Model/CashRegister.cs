@@ -57,7 +57,7 @@ namespace CashRegister.Domain.Model
 
         private void CheckAmountsCoverCost(Transaction transaction)
         {
-            if (transaction.AmountsPaid.SumAmounts(_denominations) <= transaction.Cost)
+            if (transaction.AmountsPaid.SumAmounts(_denominations) < transaction.Cost)
             {
                 throw new InvalidOperationException("The amount paid wasn't enough to cover the cost.");
             }

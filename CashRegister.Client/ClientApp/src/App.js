@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 import { CashRegister } from './components/CashRegister';
 
 import './custom.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 export default class App extends Component {
   static displayName = App.name;

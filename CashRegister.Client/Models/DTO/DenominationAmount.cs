@@ -8,6 +8,6 @@ namespace CashRegister.Client.Models.DTO
     {
         public Currencies Denomination { get; set; } 
 
-        public int Amount { get; set; }
+        public int? Amount { get; set; }
     }
 }

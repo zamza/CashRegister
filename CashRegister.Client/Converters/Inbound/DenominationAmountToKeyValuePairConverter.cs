@@ -12,7 +12,7 @@ namespace CashRegister.Client.Converters.Inbound
 
         public KeyValuePair<Currencies, int> Convert(DenominationAmount source, KeyValuePair<Currencies, int> destination, ResolutionContext context)
         {
-            return new KeyValuePair<Currencies, int>(_mapper.Map<Domain.Model.Currencies>(source.Denomination), source.Amount);
+            return new KeyValuePair<Currencies, int>(_mapper.Map<Domain.Model.Currencies>(source.Denomination), source.Amount ?? 0);
         }
     }
 }

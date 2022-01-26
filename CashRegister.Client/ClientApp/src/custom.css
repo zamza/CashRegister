@@ -23,6 +23,10 @@ label {
   text-align: right;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 table th {
   font-size: 20px;
   font-weight: bolder;
@@ -65,7 +69,7 @@ table tr td {
   background-color: #7d98b3;
 }
 
-.cost-input {
+.table-input {
   width: 100px;
 }
 
@@ -83,21 +87,17 @@ table tr td {
   justify-content: space-between;
 }
 
-.flex-list {
-
-}
-
 .flex-list div {
   width: 50%;
   min-height: 600px;
 }
 
-.flex-list > div {
-  border-right: 1px solid #000;
+.flex-list div:first-of-type {
+  border-right: 1px solid #101010;
 }
 
 .flex-list h4 {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #101010;
   padding-left: 5px;
 }
 
@@ -146,7 +146,7 @@ table tr td {
   border: 1px solid #ddd;
   margin-bottom: 15px;
   padding: 0 0 0.5rem;
-  min-width: 500px;
+  min-width: 400px;
 }
 
 .panel__header {
@@ -154,10 +154,15 @@ table tr td {
   padding-top: 15px;
   border-bottom: 1px solid #bbb;
   font-weight: bold;
+  color: #1b6ec2;
 }
 
 .panel__content {
   padding: 15px;
+}
+
+.row-divider {
+  border-bottom: 1px solid #000;
 }
 
 .table-column {
@@ -166,5 +171,6 @@ table tr td {
 }
 
 .total-rows {
-  border-top: 1px solid #000;
+  border-top: 2px solid #101010;
+  border-bottom: 2px solid #101010;
 }
